@@ -8,12 +8,27 @@ public class FbUser {
     protected String address;
     protected String email;
 
+    public FbUser(){
+
+    }
+
     public FbUser(String userName, String sex, Integer age, String address, String email) {
         this.userName = userName;
         this.sex = sex;
         this.age = age;
         this.address = address;
         this.email = email;
+    }
+
+    @Override
+    public String toString() {
+        return "FbUser{" +
+                "userName='" + userName + '\'' +
+                ", sex='" + sex + '\'' +
+                ", age=" + age +
+                ", address='" + address + '\'' +
+                ", email='" + email + '\'' +
+                '}';
     }
 
     public String getUserName() {

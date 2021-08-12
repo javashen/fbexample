@@ -11,6 +11,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.MutableData;
 import com.google.firebase.database.Transaction;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +26,7 @@ public class FbUserDAO {
     public static FbUserDAO getFbUserDAO(){
         if( null == singleInstance){
             singleInstance = new FbUserDAO();
-            singleInstance.createTmpData();
+            //singleInstance.createTmpData();
             singleInstance.init();
             //bInitialized = 1;
             return singleInstance;
@@ -41,13 +42,35 @@ public class FbUserDAO {
     }
 
     private void init(){
+        fbUsers.clear();
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("users");
 
-        for( FbUser u : fbUsers){
-            myRef.child(u.getUserName()).setValue(u);
-        }
+        ValueEventListener postListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                fbUsers.clear();
+                for(DataSnapshot tempSnapshot : dataSnapshot.getChildren()){
+                    fbUsers.add(tempSnapshot.getValue(FbUser.class));
+                    Log.i("FbUserDAO",tempSnapshot.getValue(FbUser.class).toString());
+                }
+            }
 
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                // Getting Post failed, log a message
+                Log.w("FbUserDAO", "loadPost:onCancelled", databaseError.toException());
+            }
+        };
+        myRef.addValueEventListener(postListener);
+
+    }
+
+    public boolean addUser(FbUser user){
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        database.getReference("users").child(user.getUserName()).setValue(user);
+
+        return true;
     }
 
     public Integer updateAge(){

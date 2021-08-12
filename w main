@@ -1,0 +1,23 @@
+[33mcommit 0512520c25082435ced81e8fd31432a27dfa165c[m[33m ([m[1;36mHEAD -> [m[1;32mdev[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/dev[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Author: javashen <lilida.javashen@gmail.com>
+Date:   Thu Aug 12 20:45:11 2021 +0800
+
+    add transaction at UserDAO
+
+[33mcommit 5e3e51e54469781298fb175d9d404468a0fec05b[m
+Author: javashen <lilida.javashen@gmail.com>
+Date:   Mon Aug 9 20:49:02 2021 +0800
+
+    add FbUserDAO to maitain data in firebase
+
+[33mcommit d5beba896bccdd28e2902526bc57c84501668918[m
+Author: javashen <lilida.javashen@gmail.com>
+Date:   Mon Aug 9 17:58:01 2021 +0800
+
+    add file create by android studio and firebase base code
+
+[33mcommit 3c6626a906752f975c3b62ccb5bc8afc86f0c520[m
+Author: javashen <lilida.javashen@gmail.com>
+Date:   Mon Aug 9 17:53:37 2021 +0800
+
+    Initial commit

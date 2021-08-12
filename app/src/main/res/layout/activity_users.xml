@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UserAddActivity">
+
+    <TextView
+        android:id="@+id/usernametag"
+        android:layout_width="87dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="32dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/inputusernametag" />
+
+    <EditText
+        android:id="@+id/usernamevalue"
+        android:layout_width="153dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/usernametag"
+        app:layout_constraintStart_toEndOf="@+id/usernametag"
+        tools:text="@string/namefiltervalue" />
+
+    <TextView
+        android:id="@+id/sextag"
+        android:layout_width="87dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="24dp"
+        android:text="Sex"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/usernametag" />
+
+    <EditText
+        android:id="@+id/inputsexvalue"
+        android:layout_width="153dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="24dp"
+        android:text="Input Sex"
+        app:layout_constraintStart_toEndOf="@+id/sextag"
+        app:layout_constraintTop_toBottomOf="@+id/usernamevalue" />
+
+    <EditText
+        android:id="@+id/inputagevalue"
+        android:layout_width="153dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="24dp"
+        android:text="age"
+        app:layout_constraintStart_toEndOf="@+id/inputagetag"
+        app:layout_constraintTop_toBottomOf="@+id/inputsexvalue" />
+
+    <EditText
+        android:id="@+id/inputaddressvalue"
+        android:layout_width="153dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="24dp"
+        android:text="address"
+        app:layout_constraintStart_toEndOf="@+id/inputaddresstag"
+        app:layout_constraintTop_toBottomOf="@+id/inputagevalue" />
+
+    <EditText
+        android:id="@+id/inputemailvalue"
+        android:layout_width="153dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="24dp"
+        android:text="email"
+        app:layout_constraintStart_toEndOf="@+id/inputemailtag"
+        app:layout_constraintTop_toBottomOf="@+id/inputaddressvalue" />
+
+    <TextView
+        android:id="@+id/inputagetag"
+        android:layout_width="87dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="24dp"
+        android:text="age:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sextag" />
+
+    <TextView
+        android:id="@+id/inputaddresstag"
+        android:layout_width="87dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="24dp"
+        android:text="address:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputagetag" />
+
+    <TextView
+        android:id="@+id/inputemailtag"
+        android:layout_width="87dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="24dp"
+        android:text="email:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputaddresstag" />
+
+    <Button
+        android:id="@+id/adduserbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="32dp"
+        android:text="Add user"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputemailtag" />
+
+    <Button
+        android:id="@+id/listuserbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="32dp"
+        android:text="List User"
+        app:layout_constraintStart_toEndOf="@+id/adduserbtn"
+        app:layout_constraintTop_toBottomOf="@+id/inputemailvalue" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
