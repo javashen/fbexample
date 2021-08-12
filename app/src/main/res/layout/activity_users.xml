@@ -24,10 +24,8 @@
         android:layout_height="40dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:text="TextView"
         app:layout_constraintBottom_toBottomOf="@+id/usernametag"
-        app:layout_constraintStart_toEndOf="@+id/usernametag"
-        tools:text="@string/namefiltervalue" />
+        app:layout_constraintStart_toEndOf="@+id/usernametag" />
 
     <TextView
         android:id="@+id/sextag"
@@ -47,7 +45,6 @@
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="24dp"
-        android:text="Input Sex"
         app:layout_constraintStart_toEndOf="@+id/sextag"
         app:layout_constraintTop_toBottomOf="@+id/usernamevalue" />
 
@@ -58,7 +55,6 @@
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="24dp"
-        android:text="age"
         app:layout_constraintStart_toEndOf="@+id/inputagetag"
         app:layout_constraintTop_toBottomOf="@+id/inputsexvalue" />
 
@@ -69,7 +65,6 @@
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="24dp"
-        android:text="address"
         app:layout_constraintStart_toEndOf="@+id/inputaddresstag"
         app:layout_constraintTop_toBottomOf="@+id/inputagevalue" />
 
@@ -80,7 +75,6 @@
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="24dp"
-        android:text="email"
         app:layout_constraintStart_toEndOf="@+id/inputemailtag"
         app:layout_constraintTop_toBottomOf="@+id/inputaddressvalue" />
 
