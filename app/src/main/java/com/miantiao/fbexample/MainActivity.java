@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         // end by lilida
 
         FbUserDAO usersDAO = FbUserDAO.getFbUserDAO();
+        usersDAO.updateAge();
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
