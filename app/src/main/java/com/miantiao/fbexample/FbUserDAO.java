@@ -73,6 +73,10 @@ public class FbUserDAO {
         return true;
     }
 
+    public List<FbUser> getFbUsers() {
+        return fbUsers;
+    }
+
     public Integer updateAge(){
         Integer oldAge = 48;
         Integer newAge = 100;

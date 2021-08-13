@@ -22,13 +22,11 @@ public class FbUser {
 
     @Override
     public String toString() {
-        return "FbUser{" +
-                "userName='" + userName + '\'' +
-                ", sex='" + sex + '\'' +
-                ", age=" + age +
-                ", address='" + address + '\'' +
-                ", email='" + email + '\'' +
-                '}';
+        return "userName='" + userName + '\'' +
+                "\nsex='" + sex + '\'' +
+                "\nage=" + age +
+                "\naddress='" + address + '\'' +
+                "\nemail='" + email + '\'' ;
     }
 
     public String getUserName() {

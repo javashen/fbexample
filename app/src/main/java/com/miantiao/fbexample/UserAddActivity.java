@@ -2,6 +2,7 @@ package com.miantiao.fbexample;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -27,6 +28,14 @@ public class UserAddActivity extends AppCompatActivity {
                 FbUser user = new FbUser(userName, usersex, userage, useraddress, useremail);
                 FbUserDAO.getFbUserDAO().addUser(user);
                 //Log.i("FbUserDAO",user.toString());
+            }
+        });
+
+        findViewById(R.id.listuserbtn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(UserAddActivity.this, UsersListActivity.class);
+                startActivity(intent);
             }
         });
     }
