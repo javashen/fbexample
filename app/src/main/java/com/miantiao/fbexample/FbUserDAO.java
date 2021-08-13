@@ -22,17 +22,34 @@ public class FbUserDAO {
     private static FbUserDAO singleInstance = null;
     //private static Integer bInitialized = 0;
     private List<FbUser> fbUsers = new ArrayList<FbUser>();
+    private List<IUsersObserver> usersObservers = new ArrayList<>();
 
     public static FbUserDAO getFbUserDAO(){
         if( null == singleInstance){
             singleInstance = new FbUserDAO();
             //singleInstance.createTmpData();
             singleInstance.init();
+            Log.i("FbUserDAO","FbUserDAO is created");
             //bInitialized = 1;
             return singleInstance;
         };
 
         return singleInstance;
+    }
+    public void observeUserList(IUsersObserver observer){
+        usersObservers.add(observer);
+        Log.i("FbUserDAO","a observer added");
+    }
+
+    public void removeObserver(IUsersObserver observer){
+        usersObservers.remove(observer);
+        Log.i("FbUserDAO","a observer removed");
+    }
+
+    private void trigeObserver(){
+        for(IUsersObserver observer : usersObservers){
+            observer.OnUserListChange();
+        }
     }
     private void createTmpData(){
         FbUser u1 = new FbUser("lilida", "male", 48, "guangdong shenzhen", "javashen@163.com");
@@ -52,8 +69,9 @@ public class FbUserDAO {
                 fbUsers.clear();
                 for(DataSnapshot tempSnapshot : dataSnapshot.getChildren()){
                     fbUsers.add(tempSnapshot.getValue(FbUser.class));
-                    Log.i("FbUserDAO",tempSnapshot.getValue(FbUser.class).toString());
+                    //Log.i("FbUserDAO",tempSnapshot.getValue(FbUser.class).toString());
                 }
+                trigeObserver();
             }
 
             @Override

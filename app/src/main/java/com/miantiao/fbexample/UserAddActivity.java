@@ -27,6 +27,7 @@ public class UserAddActivity extends AppCompatActivity {
 
                 FbUser user = new FbUser(userName, usersex, userage, useraddress, useremail);
                 FbUserDAO.getFbUserDAO().addUser(user);
+                initContentView();
                 //Log.i("FbUserDAO",user.toString());
             }
         });
@@ -40,4 +41,17 @@ public class UserAddActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        initContentView();
+    }
+
+    private void initContentView() {
+        ((EditText)findViewById(R.id.usernamevalue)).setText("");
+        ((EditText)findViewById(R.id.inputsexvalue)).setText("");
+        ((EditText)findViewById(R.id.inputagevalue)).setText("");
+        ((EditText)findViewById(R.id.inputaddressvalue)).setText("");
+        ((EditText)findViewById(R.id.inputemailvalue)).setText("");
+    }
 }
