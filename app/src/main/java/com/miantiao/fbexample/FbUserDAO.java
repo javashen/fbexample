@@ -18,7 +18,7 @@ import java.util.List;
 
 import static com.google.firebase.database.Transaction.*;
 
-public class FbUserDAO {
+public class FbUserDAO implements  IFbUserDAO{
     private static FbUserDAO singleInstance = null;
     //private static Integer bInitialized = 0;
     private List<FbUser> fbUsers = new ArrayList<FbUser>();
@@ -51,12 +51,12 @@ public class FbUserDAO {
             observer.OnUserListChange();
         }
     }
-    private void createTmpData(){
+    /*private void createTmpData(){
         FbUser u1 = new FbUser("lilida", "male", 48, "guangdong shenzhen", "javashen@163.com");
         FbUser u2 = new FbUser("likelu", "female", 21, "guangdong shenzhen", "abc@gmail.com");
         //fbUsers.add(u1);
         fbUsers.add(u2);
-    }
+    }*/
 
     private void init(){
         fbUsers.clear();

@@ -7,9 +7,8 @@ import android.util.Log;
 import android.widget.ListView;
 
 import java.util.ArrayList;
-import java.util.List;
 
-public class UsersListActivity extends AppCompatActivity implements IUsersObserver{
+public class UsersListActivity extends AppCompatActivity implements IFbUserDAO.IUsersObserver {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

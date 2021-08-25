@@ -12,7 +12,7 @@
         <activity android:name=".ObserverUserListActivity"></activity>
         <activity android:name=".UsersListActivity" />
         <activity
-            android:name=".UserAddActivity"
+            android:name=".UserAddViewActivity"
             android:label="@string/app_name"
             android:theme="@style/Theme.Fbexample.NoActionBar">
             <intent-filter>
